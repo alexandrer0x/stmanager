@@ -1,0 +1,517 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>#STManager - Show Time Manager</title>
+</head>
+
+<body bgcolor="#000080" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<div align="center"><center>
+
+<table border="1" bordercolor="#008080" bordercolorlight="#008080"
+bordercolordark="#008080">
+  <tr>
+    <td width="100%" bgcolor="#008080"><p align="center"><font face="Verdana" size="4"
+    color="#FFFFFF"><strong>ELENCOS</strong></font></td>
+  </tr>
+  <tr>
+    <td width="100%"><table border="1" bordercolor="#008080" bordercolorlight="#008080"
+    bordercolordark="#008080">
+      <tr>
+        <td width="619" bordercolor="#000080" bordercolorlight="#000080" bordercolordark="#000080"><form
+        name="search" onSubmit="return findInPage(this.string.value);">
+          <div align="center"><font color="#000000"><script language="JavaScript">
+
+/*
+Find In Page Script- 
+By Mike Hall (MHall75819@aol.com)
+Permission granted to Dynamicdrive.com to feature script in archive
+For full source code, visit http://dynamicdrive.com
+*/
+
+var NS4 = (document.layers);    // Which browser?
+var IE4 = (document.all);
+
+var win = window;    // window to search.
+var n   = 0;
+
+function findInPage(str) {
+
+  var txt, i, found;
+
+  if (str == "")
+    return false;
+
+  // Find next occurance of the given string on the page, wrap around to the
+  // start of the page if necessary.
+
+  if (NS4) {
+
+    // Look for match starting at the current point. If not found, rewind
+    // back to the first match.
+
+    if (!win.find(str))
+      while(win.find(str, false, true))
+        n++;
+    else
+      n++;
+
+    // If not found in either direction, give message.
+
+    if (n == 0)
+      alert("Jogador não encontrado.");
+  }
+
+  if (IE4) {
+    txt = win.document.body.createTextRange();
+
+    // Find the nth match from the top of the page.
+
+    for (i = 0; i <= n && (found = txt.findText(str)) != false; i++) {
+      txt.moveStart("character", 1);
+      txt.moveEnd("textedit");
+    }
+
+    // If found, mark it and scroll it into view.
+
+    if (found) {
+      txt.moveStart("character", -1);
+      txt.findText(str);
+      txt.select();
+      txt.scrollIntoView();
+      n++;
+    }
+
+    // Otherwise, start over at the top of the page and find first match.
+
+    else {
+      if (n > 0) {
+        n = 0;
+        findInPage(str);
+      }
+
+      // Not found anywhere, give message.
+
+      else
+        alert("Jogador não encontrado.");
+    }
+  }
+
+  return false;
+}
+
+              </script>
+<font
+          size="3">
+          <dd><input name="string" type="text" size="15" onChange="n = 0;"
+            style="background-color: rgb(0,0,128); font-family: Verdana; color: rgb(255,255,255); border: medium ridge rgb(255,255,255)">
+            </font><input name="submit" type="submit" value="Procurar Jogador"
+            style="background-color: rgb(0,0,128); font-family: Verdana; color: rgb(255,255,255); border: medium ridge rgb(255,255,255)">
+            </font></dd>
+          </div>
+        </form>
+        </td>
+      </tr>
+      <tr>
+        <td width="100%" bordercolor="#000080" bordercolorlight="#000080"
+        bordercolordark="#000080"><pre>Blazers (0-0)           HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Joel Przybilla          7-1   24  6.4  7.7  1.0      X             
+Shareef Abdur-Rahim     6-9   34 16.8  7.3  2.1         X  X       
+Zach Randolph           6-9   34 18.9  9.6  1.9         X  X       
+Damon Stoudamire        5-10  34 15.8  3.8  5.7               X  X 
+Darius Miles            6-9   26 12.8  4.7  2.0         X     X  X 
+Ruben Patterson         6-5   27 11.6  3.9  2.0         X     X  X 
+Richie Frahm            6-5   11  3.8  1.4  0.7               X  X 
+Viktor Khryapa          6-9   16  4.2  3.4  0.8         X  X       
+Theo Ratliff            6-10  27  4.8  5.3  0.5      X     X       
+Derek Anderson          6-5   26  9.2  2.7  3.0               X  X 
+Sebastian Telfair       6-0   19  6.8  1.5  3.3               X  X 
+Nick Van-Exel           6-1   30 11.1  3.0  4.3               X  X </pre>
+        <pre>Bobcats (0-0)           HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Primoz Brezec           7-1   31 13.0  7.4  1.2      X             
+Gerald Wallace          6-7   30 11.1  5.5  2.0         X  X       
+Emeka Okafor            6-10  35 15.1 10.9  0.9      X     X       
+Brevin Knight           5-10  29 10.1  2.6  9.0               X  X 
+Kareem Rush             6-6   25 11.5  2.3  1.9               X  X 
+Keith Bogans            6-5   24  9.6  3.1  1.8               X  X 
+Melvin Ely              6-10  20  7.3  4.1  1.0      X     X       
+Malik Allen             6-10  12  5.0  2.1  0.3         X  X       
+Jason Hart              6-3   25  9.5  2.7  5.0               X  X 
+Matt Carroll            6-6   17  9.0  2.4  0.7               X  X 
+Theron Smith            6-8   15  3.2  3.5  0.8         X  X       
+Cory Alexander          6-1   12  3.1  1.8  2.3               X  X </pre>
+        <pre>Bucks (0-0)             HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Dan Gadzuric            6-11  22  7.3  8.3  0.4      X             
+Desmond Mason           6-5   36 17.2  3.9  2.7         X     X  X 
+Joe Smith               6-10  30 11.0  7.3  0.9         X  X       
+TJ Ford                 5-11  26  7.1  3.2  6.5               X  X 
+Michael Redd            6-6   37 23.0  4.2  2.3               X  X 
+Calvin Booth            6-11  11  2.5  2.9  0.2      X             
+Zaza Pachulia           6-11  18  6.2  5.1  0.8      X     X       
+Marcus Fizer            6-8   16  6.2  3.2  1.2         X  X       
+Toni Kukoc              6-11  20  5.6  3.0  3.0         X  X       
+Erick Strickland        6-3   16  4.9  1.7  1.9               X  X 
+Maurice Williams        6-1   28 10.2  3.0  6.1               X  X 
+Daniel Santiago         7-1    9  2.0  1.7  0.1      X             </pre>
+        <pre>Bulls (0-0)             HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Tyson Chandler          7-1   27  8.0  9.7  0.8      X     X       
+Luol Deng               6-8   27 11.7  5.3  2.2         X     X  X 
+Eddy Curry              6-11  28 16.1  5.4  0.6      X     X       
+Kirk Hinrich            6-3   36 15.7  3.9  6.4               X  X 
+Ben Gordon              6-3   24 15.1  2.6  2.0               X  X 
+Antonio Davis           6-9   25  7.0  5.9  1.1      X     X       
+Adrian Griffin          6-5    9  2.2  2.1  0.8         X     X  X 
+Chris Duhon             6-1   26  5.9  2.6  4.7               X  X 
+Andres Nocioni          6-7   23  8.4  4.8  1.5         X  X       
+Eric Piatkowski         6-7   12  4.8  1.2  0.8         X     X  X 
+Lawrence Funderburke    6-9   10  4.5  1.5  0.0         X  X       
+Othella Harrington      6-9   18  8.0  4.2  0.8      X     X       </pre>
+        <pre>Cavaliers (0-0)         HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Zydrunas Ilgauskas      7-3   33 16.9  8.6  1.3      X             
+Anderson Varejao        6-10  15  4.9  4.8  0.5         X  X       
+Drew Gooden             6-10  30 14.4  9.2  1.6         X  X       
+Jeff McInnis            6-4   34 12.8  2.1  5.1               X  X 
+LeBron James            6-8   42 27.2  7.3  7.2         X     X  X 
+DeSagana Diop           7-0    7  1.0  1.8  0.4      X             
+Luke Jackson            6-7    4  2.9  0.6  0.3         X     X  X 
+Eric Snow               6-3   22  4.0  1.9  3.9               X  X 
+Lucious Harris          6-5   15  4.3  1.7  0.7               X  X 
+Robert Traylor          6-8   17  5.5  4.5  0.8      X     X       
+Jiri Welsch             6-7   18  6.5  2.4  1.5         X     X  X 
+Ira Newble              6-7   24  5.9  3.0  1.2         X     X  X </pre>
+        <pre>Celtics (0-0)           HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Raef Lafrentz           6-11  27 11.1  6.9  1.2      X     X       
+Ricky Davis             6-7   32 16.0  3.0  3.0         X     X  X 
+Antoine Walker          6-9   34 16.3  8.3  3.0         X  X       
+Gary Payton             6-4   33 11.3  3.1  6.1               X  X 
+Paul Pierce             6-6   36 21.6  6.6  4.2         X     X  X 
+Al Jefferson            6-10  14  6.7  4.4  0.3         X  X       
+Tony Allen              6-4   16  6.4  2.9  0.8               X  X 
+Kendrick Perkins        6-10   9  2.5  2.9  0.3      X             
+Marcus Banks            6-2   14  4.6  1.6  1.9               X  X 
+Justin Reed             6-8    5  1.8  0.7  0.4         X  X       
+Mark Blount             7-0   25  9.4  4.8  1.6      X     X       
+Delonte West            6-4   13  4.5  1.7  1.4               X  X </pre>
+        <pre>Clippers (0-0)          HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Chris Kaman             7-0   25  9.1  6.7  1.2      X             
+Bobby Simmons           6-6   37 16.4  5.9  2.7         X  X       
+Elton Brand             6-8   37 20.0  9.5  2.6      X     X       
+Marco Jaric             6-7   33  9.9  3.2  6.1               X  X 
+Corey Maggette          6-6   36 22.2  6.0  3.4         X     X  X 
+Shaun Livingston        6-7   27  7.4  3.0  5.0               X  X 
+Rick Brunson            6-4   24  5.5  2.3  5.1               X  X 
+Kerry Kittles           6-5   22  6.3  2.9  1.8               X  X 
+Chris Wilcox            6-10  18  7.9  4.2  0.7      X             
+Quinton Ross            6-6   21  5.1  2.7  0.2               X  X 
+Zeljko Rebraca          7-0   16  5.8  3.2  0.4      X             
+Mamadou N`diaye         7-0    6  1.8  1.6  0.1      X             </pre>
+        <pre>Grizzlies (0-0)         HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Stromile Swift          6-9   21 10.1  4.6  0.7      X     X       
+Bonzi Wells             6-5   21 10.4  3.3  1.2         X     X  X 
+Pau Gasol               7-0   31 17.8  7.3  2.4         X  X       
+Jason Williams          6-1   27 10.1  1.7  5.6               X  X 
+Mike Miller             6-8   29 13.4  3.9  2.9               X  X 
+James Posey             6-8   27  8.1  4.4  1.8         X     X  X 
+Shane Battier           6-8   31  9.9  5.2  1.6         X  X       
+Jake Tsakalidis         7-2    8  2.5  1.8  0.3      X             
+Earl Watson             6-1   22  7.7  2.0  4.5               X  X 
+Brian Cardinal          6-8   24  9.0  3.9  2.0         X  X       
+Dahntay Jones           6-6   12  4.5  1.3  0.4         X     X  X 
+Lorenzen Wright         6-11  28  9.6  7.7  1.1      X     X       </pre>
+        <pre>Hawks (0-0)             HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Predag Drobnjak         6-11  20  8.4  3.4  0.7      X             
+Josh Childerss          6-8   29 10.1  6.0  1.9         X     X  X 
+Al Harrington           6-9   38 17.5  7.0  3.2         X  X       
+Tyronn Lue              6-3   31 13.5  2.2  5.4               X  X 
+Tony Delk               6-2   23 11.9  2.3  1.9               X  X 
+Jason Collier           7-0   13  5.7  2.6  0.3      X             
+Tom Gugliotta           6-10  27  7.9  5.5  2.1         X  X       
+Boris Diaw              6-8   18  4.8  2.6  2.3               X  X 
+Josh Smith              6-9   27  9.7  6.2  1.7         X     X  X 
+Michael Stewart         6-10  12  2.1  3.3  0.4      X             
+Kevin Willis            7-0   11  3.0  2.6  0.3      X     X       
+Obinna Ekezie           6-9   17  5.5  4.3  0.3      X     X       </pre>
+        <pre>Heat (0-0)              HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Shaquille O`Neal        7-1   34 22.9 10.4  2.7      X             
+Udonis Haslem           6-8   33 10.9  9.1  1.4         X  X       
+Alonzo Mourning         6-10  25 10.4  7.1  0.8      X     X       
+Damon Jones             6-3   31 11.3  2.8  4.3               X  X 
+Dwyane Wade             6-4   38 24.1  5.2  6.8               X  X 
+Eddie Jones             6-6   35 12.7  5.1  2.7         X     X  X 
+Shandon Anderson        6-6   17  3.9  2.9  1.1         X     X  X 
+Rasual Butler           6-7   18  6.5  2.3  1.0         X  X       
+Christian Laettner      6-11  15  5.3  2.7  0.8      X     X       
+Steve Smith             6-8   15  6.3  1.3  1.4         X     X  X 
+Keyon Dooling           6-3   16  5.2  1.2  1.8               X  X 
+Wang Zhizhi             7-1    4  2.2  0.9  0.3      X             </pre>
+        <pre>Hornets (0-0)           HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Jamaal Magloire         6-11  30 11.7  8.9  1.3      X             
+Lee Nailon              6-9   29 14.2  4.4  1.6         X  X       
+PJ Brown                6-11  34 10.8  9.0  2.2      X     X       
+Speedy Claxton          5-11  30 11.5  3.0  6.0               X  X 
+Dan Dickau              6-0   30 13.2  2.7  5.2               X  X 
+Maciej Lampe            6-11  10  3.1  2.4  0.3         X  X       
+Chris Andersen          6-10  21  7.7  6.1  1.1      X     X       
+Bostjan Nachbar         6-9   18  7.0  2.6  1.0         X  X       
+Casey Jacobsen          6-6   21  6.5  2.0  1.3         X     X  X 
+JR Smith                6-6   24 10.3  2.0  1.9               X  X 
+Jackson Vroman          6-10  18  5.4  4.5  0.9      X     X       
+David West              6-8   18  6.2  4.3  0.8         X  X       </pre>
+        <pre>Jazz (0-0)              HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Mehmet Okur             6-11  28 12.9  7.5  2.0      X     X       
+Andrei Kirilenko        6-9   32 15.6  6.2  3.2         X  X       
+Carlos Boozer           6-8   34 17.8  9.0  2.8      X     X       
+Howard Eisley           6-2   19  5.6  1.2  3.4               X  X 
+Gordan Giricek          6-5   20  7.6  2.2  1.7               X  X 
+Ben Handlogten          6-10  14  4.5  3.1  0.6      X             
+Jarron Collins          6-11  19  4.3  3.3  1.2      X             
+Keith McLeod            6-2   26  7.8  2.1  4.5               X  X 
+Matt Harpring           6-7   33 14.0  6.2  1.8         X     X  X 
+Kirk Snyder             6-6   13  5.0  1.9  0.5               X  X 
+Raja Bell               6-5   28 12.3  3.2  1.4               X  X 
+Raul Lopez              6-0   16  5.2  1.3  4.0               X  X </pre>
+        <pre>Kings (0-0)             HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Brad Miller             7-0   37 15.6  9.3  3.9      X             
+Peja Stojakovic         6-10  38 20.3  4.3  2.1         X  X       
+Kenny Thomas            6-7   31 14.5  8.7  2.9         X  X       
+Mike Bibby              6-1   38 19.6  4.2  4.2               X  X 
+Cuttino Mobley          6-4   38 17.8  3.9  3.4               X  X 
+Greg Ostertag           7-2    9  1.6  3.0  0.7      X             
+Brian Skinner           6-9   27  7.4  8.7  1.5      X             
+Eddie House             6-1   11  4.7  1.2  1.3               X  X 
+Bobby Jackson           6-1   21 12.0  3.4  2.4               X  X 
+Darius Songaila         6-8   20  7.5  4.2  1.4         X  X       
+Corliss Williamson      6-7   19  9.3  3.4  1.5         X  X       
+Maurice Evans           6-5   18  6.4  3.1  0.7               X  X </pre>
+        <pre>Knicks (0-0)            HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Kurt Thomas             6-9   35 11.4 10.4  2.0      X     X       
+Tim Thomas              6-10  27 12.0  3.3  1.5         X  X       
+Michael Sweetney        6-8   19  8.4  5.4  0.6         X  X       
+Stephon Marbury         6-2   40 21.7  3.0  8.1               X  X 
+Jamal Crawford          6-5   38 17.7  2.9  4.3               X  X 
+Allan Houston           6-6   26 11.9  1.1  2.1               X  X 
+Malik Rose              6-7   19  7.0  4.5  0.8         X  X       
+Maurice Taylor          6-9   15  6.5  3.4  0.5         X  X       
+Trevor Ariza            6-8   17  5.8  3.0  1.1         X  X       
+Anfernee Hardaway       6-7   24  7.3  2.4  2.0         X     X  X 
+Jerome Williams         6-9   15  4.5  3.6  0.5      X     X       
+Jackie Butler           6-10   1  3.3  0.0  0.0      X             </pre>
+        <pre>Lakers (0-0)            HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Chris Mihm              7-0   24  9.8  6.7  0.7      X     X       
+Caron Butler            6-7   35 15.5  5.8  1.9         X     X  X 
+Lamar Odom              6-10  36 15.2 10.2  3.7         X  X       
+Chucky Atkins           5-11  35 13.6  2.4  4.4               X  X 
+Kobe Bryant             6-6   40 27.6  5.9  6.0               X  X 
+Devean George           6-8   20  7.3  3.5  0.9         X     X  X 
+Brian Grant             6-9   16  3.8  3.7  0.5         X  X       
+Jumaine Jones           6-8   24  7.6  5.2  0.9         X  X       
+Slava Medvedenko        6-10   9  3.8  1.8  0.3         X  X       
+Vlade Divac             7-1    8  2.3  2.1  1.3      X             
+Brian Cook              6-9   15  6.4  3.0  0.5         X  X       
+Tierre Brown            6-2   14  4.4  1.2  2.0               X  X </pre>
+        <pre>Magic (0-0)             HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Kelvin Cato             6-11  24  7.0  6.7  0.6      X             
+Grant Hill              6-8   34 19.7  4.7  3.3         X  X       
+Dwight Howard           6-11  32 12.0 10.0  0.9         X  X       
+Steve Francis           6-3   38 21.3  5.8  7.0               X  X 
+Hedo Turkoglu           6-10  26 14.0  3.5  2.3         X     X  X 
+Tony Battie             6-11  23  4.9  5.6  0.5      X     X       
+Stacey Augmon           6-8   11  3.4  1.7  0.6         X     X  X 
+Brandon Hunter          6-7    7  3.1  2.2  0.1         X  X       
+Jameer Nelson           6-0   20  8.7  2.4  3.0               X  X 
+DeShawn Stevenson       6-5   19  7.8  1.9  1.3               X  X 
+Pat Garrity             6-9   13  4.6  1.7  0.4         X  X       
+Doug Christie           6-6   25  5.7  2.6  2.2         X     X  X </pre>
+        <pre>Mavericks (0-0)         HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Erick Dampier           6-11  27  9.2  8.5  0.9      X             
+Michael Finley          6-7   36 15.7  4.1  2.6         X     X  X 
+Dirk Nowitzki           7-0   38 26.1  9.7  3.1         X  X       
+Jason Terry             6-2   30 12.4  2.3  5.4               X  X 
+Jerry Stackhouse        6-6   28 14.9  3.3  2.3         X     X  X 
+Devin Harris            6-3   15  5.7  1.3  2.2               X  X 
+Shawn Bradley           7-6   11  2.7  2.8  0.2      X             
+Josh Howard             6-9   32 12.6  6.4  1.4         X  X       
+Alan Henderson          6-9   15  3.5  4.5  0.3      X     X       
+Darrell Armstrong       6-1   14  4.0  1.8  2.7               X  X 
+Marquis Daniels         6-6   23  9.1  3.6  2.1               X  X 
+keith VanHorn           6-10  23 12.2  4.4  1.2         X  X       </pre>
+        <pre>Nets (0-0)              HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Nenad Krstic            7-0   26 10.0  5.3  1.0      X             
+Richard Jefferson       6-7   41 22.2  7.3  4.0         X     X  X 
+Brian Scalabrine        6-10  21  6.3  4.5  1.6         X  X       
+Jason Kidd              6-4   36 14.4  7.4  8.3               X  X 
+Vince Carter            6-6   38 27.5  5.9  4.7         X     X  X 
+Jason Collins           7-0   31  6.4  6.1  1.3      X     X       
+Rodney Bufford          6-5   20  7.0  3.0  1.0         X     X  X 
+Zoran Planicic          6-7   11  5.0  1.6  1.0         X     X  X 
+Ron Mercer              6-7   21  7.6  2.2  1.1         X     X  X 
+Clifford Robinson       6-10  20  6.0  3.3  1.0      X     X       
+Jabari Smith            6-11  14  3.7  2.5  0.8      X             
+Jacque Vaughn           6-1   19  5.3  1.5  1.9               X  X </pre>
+        <pre>Nuggets (0-0)           HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Marcus Camby            6-11  30 10.3 10.0  2.3      X     X       
+Carmelo Anthony         6-8   34 20.8  5.7  2.6         X  X       
+Kenyon Martin           6-9   32 15.5  7.3  2.4         X  X       
+Andre Miller            6-2   34 13.6  4.1  6.9               X  X 
+Earl Boykins            5-5   26 12.4  1.7  4.5               X  X 
+Francisco Elson         7-0   14  3.7  3.0  0.5      X             
+Voshon Lenard           6-4   18  9.7  2.0  2.0               X  X 
+DerMarr Johnson         6-9   17  7.1  2.1  1.1         X     X  X 
+Greg Buckner            6-4   21  6.2  3.0  1.9         X     X  X 
+Eduardo Najera          6-8   22  6.9  4.8  1.1         X  X       
+H Nene                  6-11  23  9.6  5.9  1.5      X     X       
+Bryon Russel            6-7   14  4.4  2.5  1.0         X     X  X </pre>
+        <pre>Pacers (0-0)            HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Jeff Foster             6-11  26  7.0  9.0  0.7      X     X       
+Ron Artest              6-7   41 24.6  6.4  3.1         X     X  X 
+Jermaine O`Neal         6-11  34 24.3  8.8  1.9      X     X       
+Jamaal Tinsley          6-3   32 15.4  4.0  6.4               X  X 
+Stephen Jackson         6-8   35 18.7  4.9  2.3         X     X  X 
+Fred Jones              6-2   29 10.6  3.1  2.5               X  X 
+David Harrison          7-0   17  6.1  3.1  0.3      X             
+Reggie Miller           6-7   31 14.8  2.4  2.2               X  X 
+Austin Croshere         6-10  25  8.9  5.1  1.3         X  X       
+Scot Pollard            6-11  17  3.9  4.2  0.4      X     X       
+Antonhy Johnson         6-3   27  8.4  2.8  4.8               X  X 
+Dale Davis              6-11  29  6.9  8.9  1.0      X     X       </pre>
+        <pre>Pistons (0-0)           HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Ben Wallace             6-9   36  9.7 12.2  1.7      X     X       
+Tayshaun Prince         6-9   37 14.7  5.3  3.0         X  X       
+Rasheed Wallace         6-11  34 14.5  8.2  1.8      X     X       
+Chauncey Billups        6-3   35 16.5  3.4  5.8               X  X 
+Richard Hamilton        6-7   38 18.7  3.9  4.9         X     X  X 
+Lindsey Hunter          6-2   15  3.8  1.6  1.7               X  X 
+Carlos Arroyo           6-2   20  6.6  1.5  4.0               X  X 
+Darko Milicic           7-0    6  1.8  1.2  0.2      X     X       
+Ronald Dupree           6-7   10  3.2  2.0  0.5         X  X       
+Elden Campbell          7-0   10  4.2  2.8  0.6      X             
+Antonio Mcdyess         6-9   23  9.6  6.3  0.9         X  X       
+Carlos Delfino          6-6   15  3.9  1.8  1.3               X  X </pre>
+        <pre>Raptors (0-0)           HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Loren Woods             7-1   15  3.9  4.9  0.4      X     X       
+Donyell Marshall        6-9   25 11.5  6.6  1.2         X  X       
+Chris Bosh              6-10  37 16.8  8.9  1.9         X  X       
+Rafer Alston            6-2   33 14.2  3.5  6.4               X  X 
+Jalen Rose              6-8   33 18.5  3.4  2.6         X     X  X 
+Lamond Murray           6-7   14  6.0  2.6  0.8         X  X       
+Omar Cook               6-1   14  4.6  1.4  4.4         X  X       
+Morris Peterson         6-7   30 12.5  4.1  2.1         X     X  X 
+Milt Palacio            6-3   19  5.8  1.7  3.5               X  X 
+Matt Bonner             6-10  18  7.2  2.7  0.6         X  X       
+Eric Williams           6-8   20  5.2  6.5  0.5         X  X       
+Rafael Araujo           6-11  12  3.3  3.1  0.3      X             </pre>
+        <pre>Rockets (0-0)           HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Yao Ming                7-6   30 18.3  8.4  0.8      X             
+Tracy McGrady           6-8   40 25.7  6.2  5.7         X     X  X 
+Juwan Howard            6-9   26  9.6  5.7  1.5         X  X       
+Bob Sura                6-5   31 10.3  5.5  5.2               X  X 
+David Wesley            6-1   34 11.9  2.8  3.3               X  X 
+Scott Padgett           6-9   14  4.2  2.8  0.8         X  X       
+Vin Baker               6-11   7  1.3  1.4  0.4      X     X       
+Moochie Norris          6-1    9  2.4  1.2  1.0               X  X 
+Ryan Bowen              6-9    9  1.7  1.2  0.3         X  X       
+Jon Barry               6-5   23  7.0  2.6  2.6               X  X 
+Mike James              6-2   25 12.4  3.2  2.9               X  X 
+Dikembe Mutombo         7-2   15  4.0  5.3  0.1      X             </pre>
+        <pre>Sixers (0-0)            HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Samuel Dalembert        6-11  24  8.2  7.5  0.5      X             
+Jamal Mashburn          6-8   32 13.1  6.7  3.0         X  X       
+Chris Webber            6-10  35 19.5  9.1  4.7         X  X       
+Andre Iguodala          6-6   32  9.0  5.7  3.0         X     X  X 
+Allen Iverson           6-0   42 30.7  4.0  7.9               X  X 
+Willie Green            6-2   18  7.7  2.3  1.8               X  X 
+Kyle Korver             6-6   32 11.5  4.6  2.2         X  X       
+Josh Davis              6-8    7  2.8  1.9  0.3         X  X       
+Aaron Mckie             6-5   16  2.2  2.5  1.5               X  X 
+Kevin Ollie             6-2    6  1.1  0.7  0.7               X  X 
+Marc Jackson            6-10  24 12.0  5.0  1.0      X     X       
+Rodney Rogers           6-7   17  6.0  3.7  0.9         X  X       </pre>
+        <pre>Sonics (0-0)            HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Jerome James            7-1   16  4.9  3.0  0.2      X             
+Rashard Lewis           6-10  37 20.5  5.5  1.3         X  X       
+Vladimir Radmanovic     6-10  29 11.8  4.6  1.4         X  X       
+Antonio Daniels         6-4   27 11.2  2.3  4.1               X  X 
+Ray Allen               6-5   39 23.9  4.4  3.7               X  X 
+Danny Fortson           6-8   16  7.5  5.6  0.1         X  X       
+Nick Collison           6-9   17  5.6  4.6  0.4         X  X       
+Ronald Murray           6-3   18  7.0  2.0  1.3               X  X 
+Vitaly Potapenko        6-10  10  3.5  2.4  0.3      X     X       
+Reggie Evans            6-8   23  4.9  9.3  0.7         X  X       
+Luke Ridnour            6-1   31 10.0  2.5  5.9               X  X 
+Damien Wilkins          6-6   17  6.3  2.3  0.9         X  X       </pre>
+        <pre>Spurs (0-0)             HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Nazr Mohammed           6-10  25  9.5  7.6  0.4      X             
+Glenn Robinson          6-7   17 10.0  2.7  0.9         X  X       
+Tim Duncan              6-11  33 20.3 11.1  2.7      X     X       
+Tony Parker             6-2   34 16.6  3.7  6.1               X  X 
+Manu Ginobili           6-6   29 16.0  4.4  3.9               X  X 
+Devin Brown             6-5   18  7.4  2.6  1.4               X  X 
+Beno Udrih              6-3   14  5.9  1.0  1.9               X  X 
+Tony Massenburg         6-9   11  3.2  2.7  0.2      X     X       
+Robert Horry            6-10  18  6.0  3.6  1.1      X     X       
+Rasho Nesterovic        7-0   25  5.9  6.6  1.0      X             
+Brent Barry             6-7   21  7.4  2.3  2.2               X  X 
+Bruce Bowen             6-7   32  8.2  3.5  1.5         X  X       </pre>
+        <pre>Suns (0-0)              HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Amare Stoudamire        6-10  36 26.0  8.9  1.6      X     X       
+Joe Johnson             6-7   39 17.1  5.1  3.5         X     X  X 
+Shawn Marion            6-7   38 19.4 11.3  1.9         X  X       
+Steve Nash              6-3   34 15.5  3.3 11.5               X  X 
+Quentin Richardson      6-6   35 14.9  6.1  2.0         X     X  X 
+Walter McCarty          6-10  12  3.6  1.9  0.5         X  X       
+Jim Jackson             6-6   41 13.3  4.8  3.6         X     X  X 
+Bo Outlaw               6-8    5  0.7  1.4  0.3         X  X       
+Leandro Barbosa         6-3   17  7.0  2.1  2.0               X  X 
+Paul Shirley            6-10   3  1.3  0.2  0.3         X  X       
+Steven Hunter           7-0   13  4.6  3.0  0.2      X     X       
+Jake Voskuhl            6-11   9  2.1  2.4  0.4      X             </pre>
+        <pre>Timberwolves (0-0)      HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Michael Olowokandi      7-0   19  5.9  5.2  0.5      X             
+Ndudi Ebi               6-9   27 13.5  8.0  0.5         X  X       
+Kevin Garnett           6-11  38 22.2 13.5  5.7         X  X       
+Sam Cassell             6-3   25 13.5  2.7  5.1               X  X 
+Wally Szczerbiak        6-7   31 15.5  3.7  2.4         X     X  X 
+Eddie Griffin           6-10  21  7.5  6.5  0.8         X  X       
+Troy Hudson             6-1   21  8.7  1.3  3.6               X  X 
+Anthony Carter          6-2   11  2.7  1.0  2.4               X  X 
+Latrell Sprewell        6-5   30 12.8  3.2  2.2               X  X 
+Fred Hoiberg            6-5   16  5.8  2.4  1.1               X  X 
+Mark Madsen             6-9   14  2.1  3.1  0.4      X     X       
+Ervin Johnson           6-11   8  1.6  2.5  0.1      X             </pre>
+        <pre>Warriors (0-0)          HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Andris Biedrins         6-11  12  3.6  3.9  0.4      X     X       
+Mike Dunleavy           6-9   32 13.4  5.5  2.6         X  X       
+Troy Murphy             6-11  33 15.4 10.8  1.4         X  X       
+Baron Davis             6-3   35 19.5  3.9  8.3               X  X 
+Jason Richardson        6-6   37 21.7  5.9  3.9         X     X  X 
+Calbert Cheaney         6-7   17  4.5  2.3  1.2         X     X  X 
+Adonal Foyle            6-10  21  4.5  5.5  0.7      X             
+Zarko Cabarkapa         6-11  12  6.2  2.7  0.7      X     X       
+Miackael Pietrus        6-6   20  9.5  2.8  1.2               X  X 
+Derek Fisher            6-1   30 11.9  2.9  4.1               X  X 
+Nikoloz Tskitishivilli  7-0    6  1.4  1.2  0.3      X     X       
+Rodney White            6-9   11  5.1  1.5  0.8         X  X       </pre>
+        <pre>Wizards (0-0)           HGT  MPG  PPG  RPG  APG     CE SF PF PG OG
+Brendan Haywood         7-0   27  9.4  6.8  0.8      X             
+Jarvis Hayes            6-7   28 10.2  4.2  1.7         X     X  X 
+Antawn Jamison          6-9   38 19.6  7.6  2.3         X  X       
+Gilbert Arenas          6-3   40 25.5  4.7  5.1               X  X 
+Larry Hughes            6-5   38 22.0  6.3  4.7               X  X 
+Jared Jeffries          6-10  26  6.8  4.9  2.0         X  X       
+Steve Blake             6-3   14  4.3  1.6  1.6               X  X 
+Juan Dixon              6-3   16  8.0  1.9  1.8               X  X 
+Kwame Brown             6-11  21  7.0  4.9  0.9      X     X       
+Anthony Peeler          6-4   13  3.8  1.6  1.4               X  X 
+Etan Thomas             6-10  20  7.1  5.2  0.4      X     X       
+Michael Ruffin          6-8   15  1.4  4.2  0.8      X     X       
+</pre>
+        <pre>CE = Center  SF = SmallFwd  PF = PowerFwd  PG = PointGrd  OG = OffGrd</pre>
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table>
+</center></div>
+</body>
+</html>
